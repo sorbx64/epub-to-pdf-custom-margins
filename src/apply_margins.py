@@ -18,7 +18,7 @@ def get_ouput_pdf_path(curr_pdf_path):
 		parent_dir_path = os.path.dirname(curr_pdf_path)
 		return os.path.join(parent_dir_path, replaced_basename)
 	else:
-		root, ext = os.path.splitext(curr_pdf_path)[0]
+		root, ext = os.path.splitext(curr_pdf_path)
 		if root.endswith('--') or root.endswith('-'):
 			return '{}margins_applied{}'.format(root, ext)
 		return '{}--margins_applied{}'.format(root, ext)
